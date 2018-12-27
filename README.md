@@ -1,3 +1,54 @@
+<div align="center">
+  <h1>create-react-app-perf-test</h1>
+  <p>Sample Create React App set up for performance testing with puppeteer</p>
+</div>
+
+<hr />
+
+
+[![Watch on GitHub][github-watch-badge]][github-watch]
+[![Star on GitHub][github-star-badge]][github-star]
+[![Tweet][twitter-badge]][twitter]
+
+## The problem
+
+You want to do performance testing on React components / app but don't want to set up everything needed to get a test app set up as well as the tooling needed to collect performance metrics.
+
+## This solution
+
+Using [create-react-app](https://github.com/facebook/create-react-app) + [puppeteer](https://github.com/GoogleChrome/puppeteer) + [this custom script](https://github.com/bjankord/create-react-app-perf-test/blob/master/perf-test.js), you can get [performance timing metrics](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming), [page metrics from puppeteer](https://github.com/GoogleChrome/puppeteer/blob/v1.11.0/docs/api.md#pagemetrics), as well as [metrics from puppeter trace file via tracealyzer](https://www.npmjs.com/package/tracealyzer).
+
+
+## Usage
+
+* Fork the repo
+* Add your code to the create-react-app
+* Run `npm build:local`.
+  * *This runs `react-scripts build` with the `PUCLIC_URL` env var set to `http://localhost:5000`*
+* Run `npm run serve`.
+  * *This runs the `build` directory at [http://localhost:5000](http://localhost:5000)*
+* In a seperate terminal tab, run `npm run perf-test`.
+  * *This runs puppeteer on the app being served on [http://localhost:5000](http://localhost:5000) and logs performance timing metrics, page metrics from puppeteer, as well as metrics from puppeter trace file via tracealyzer.*
+
+## Inspiration
+
+I referenced [@markerikson][markerikson]'s [benchmark-react-redux-perf repo][benchmark-react-redux-perf] a lot.
+
+## LICENSE
+
+[MIT](https://github.com/bjankord/create-react-app-perf-test/blob/master/LICENSE)
+
+[markerikson]: https://github.com/markerikson
+[benchmark-react-redux-perf]: https://github.com/markerikson/benchmark-react-redux-perf
+[github-watch-badge]: https://img.shields.io/github/watchers/bjankord/create-react-app-perf-test.svg?style=social
+[github-watch]: https://github.com/bjankord/create-react-app-perf-test/watchers
+[github-star-badge]: https://img.shields.io/github/stars/bjankord/create-react-app-perf-test.svg?style=social
+[github-star]: https://github.com/bjankord/create-react-app-perf-test/stargazers
+[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20create-react-app-perf-test%20by%20%40bjankord%20https%3A%2F%2Fgithub.com%2Fbjankord%2Fcreate-react-app-perf-test%20%F0%9F%91%8D
+[twitter-badge]: https://img.shields.io/twitter/url/https/github.com/bjankord/create-react-app-perf-test.svg?style=social
+
+## Below this is the general Create React App README
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
