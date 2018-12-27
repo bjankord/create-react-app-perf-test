@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "prettyjson": "^1.2.1",
     "puppeteer": "^1.11.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
