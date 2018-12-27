@@ -30,6 +30,10 @@ Using [create-react-app](https://github.com/facebook/create-react-app) + [puppet
 * In a seperate terminal tab, run `npm run perf-test`.
   * *This runs puppeteer on the app being served on [http://localhost:5000](http://localhost:5000) and logs performance timing metrics, page metrics from puppeteer, as well as metrics from puppeter trace file via tracealyzer.*
 
+## Sample Output
+
+![perf metrics](https://github.com/bjankord/create-react-app-perf-test/blob/master/perf-metrics.png?raw=true)
+
 ## Inspiration
 
 I referenced [@markerikson][markerikson]'s [benchmark-react-redux-perf repo][benchmark-react-redux-perf] a lot.
