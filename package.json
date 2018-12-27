@@ -24,6 +24,7 @@
     "react-scripts": "2.1.2"
   },
   "devDependencies": {
+    "chalk": "^2.4.1",
     "prettyjson": "^1.2.1",
     "puppeteer": "^1.11.0",
     "serve": "^10.1.1",
