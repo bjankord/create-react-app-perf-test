@@ -32,10 +32,10 @@ const TRACE_FILE = 'trace.json';
   console.log(prettyjson.render(performance, {numberColor: 'cyan'}));
 
   // More info: https://github.com/GoogleChrome/puppeteer/blob/v1.11.0/docs/api.md#pagemetrics
-  console.log((chalk.yellow.underline.bold('puppeteer page metrics\n')));
+  console.log((chalk.yellow.underline.bold('\n\npuppeteer page metrics\n')));
   console.log(prettyjson.render(pageMetrics, {numberColor: 'cyan'}));
 
   // More info: https://www.npmjs.com/package/tracealyzer
-  console.log((chalk.yellow.underline.bold('tracealyzer metrics\n')));
+  console.log((chalk.yellow.underline.bold('\n\ntracealyzer metrics\n')));
   console.log(prettyjson.render(tracealyzerMetrics, {numberColor: 'cyan'}));
 })();
