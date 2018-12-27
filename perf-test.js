@@ -26,16 +26,28 @@ const TRACE_FILE = 'trace.json';
 
   const tracealyzerMetrics = tracealyzer(TRACE_FILE);
 
+  console.log((chalk.yellow.underline.bold('Total page time from start to load\n')));
+  const totalTime = performance.total.timing.loadEventEnd - performance.total.timing.fetchStart;
+  console.log((chalk.cyan.bold(`${totalTime}ms\n`)));
 
-  // More Info: https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming
+  console.log((chalk.yellow.underline.bold('Time spent constructing the DOM tree\n')));
+  const domConstructionTime = performance.total.timing.domComplete - performance.total.timing.domInteractive;
+  console.log((chalk.cyan.bold(`${domConstructionTime}ms\n`)));
+
+  console.log((chalk.yellow.underline.bold('Time spent rendering\n')));
+  const renderingTime = performance.total.timing.domComplete - performance.total.timing.domLoading;
+  console.log((chalk.cyan.bold(`${renderingTime}ms\n`)));
+
   console.log((chalk.yellow.underline.bold('window.performance total and entries\n')));
+  console.log((chalk.yellow.italic('window.performance timing values are in millisecond timestamps\nwindow.performance entries values are in millisecond\n\n')));
+  console.log((chalk.yellow.italic('More info:\n* https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API\n* https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp\n')));
   console.log(prettyjson.render(performance, {numberColor: 'cyan'}));
 
-  // More info: https://github.com/GoogleChrome/puppeteer/blob/v1.11.0/docs/api.md#pagemetrics
   console.log((chalk.yellow.underline.bold('\n\npuppeteer page metrics\n')));
+  console.log((chalk.yellow.italic('More info:\n* https://github.com/GoogleChrome/puppeteer/blob/v1.11.0/docs/api.md#pagemetrics\n')));
   console.log(prettyjson.render(pageMetrics, {numberColor: 'cyan'}));
 
-  // More info: https://www.npmjs.com/package/tracealyzer
   console.log((chalk.yellow.underline.bold('\n\ntracealyzer metrics\n')));
+  console.log((chalk.yellow.italic('More info:\n* https://www.npmjs.com/package/tracealyzer\n')));
   console.log(prettyjson.render(tracealyzerMetrics, {numberColor: 'cyan'}));
 })();
