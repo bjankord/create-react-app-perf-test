@@ -12,11 +12,11 @@
 
 ## The problem
 
-You want to do performance testing on React components / app but don't want to set up everything needed to get a test app set up as well as the tooling needed to collect performance metrics.
+You want to do performance testing in a reproducible test environment on React components but don't want to set up everything needed to get a test app set up as well as the tooling needed to collect performance metrics.
 
 ## This solution
 
-Using [create-react-app](https://github.com/facebook/create-react-app) + [puppeteer](https://github.com/GoogleChrome/puppeteer) + [this custom script](https://github.com/bjankord/create-react-app-perf-test/blob/master/perf-test.js), you can get [performance timing metrics](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming), [page metrics from puppeteer](https://github.com/GoogleChrome/puppeteer/blob/v1.11.0/docs/api.md#pagemetrics), as well as [metrics from puppeter trace file via tracealyzer](https://www.npmjs.com/package/tracealyzer).
+Using [create-react-app](https://github.com/facebook/create-react-app) + [puppeteer](https://github.com/GoogleChrome/puppeteer) + [this custom script](https://github.com/bjankord/create-react-app-perf-test/blob/master/perf-test.js), you can get a reproducible test environment to collect [performance timing metrics](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API), [page metrics from puppeteer](https://github.com/GoogleChrome/puppeteer/blob/v1.11.0/docs/api.md#pagemetrics), as well as [metrics from puppeteer trace file via tracealyzer](https://www.npmjs.com/package/tracealyzer).
 
 
 ## Usage
@@ -30,7 +30,20 @@ Using [create-react-app](https://github.com/facebook/create-react-app) + [puppet
 * In a seperate terminal tab, run `npm run perf-test`.
   * *This runs puppeteer on the app being served on [http://localhost:5000](http://localhost:5000) and logs performance timing metrics, page metrics from puppeteer, as well as metrics from puppeter trace file via tracealyzer.*
 
-## Sample Output
+### Performance Chart
+
+![performance-chart](https://github.com/bjankord/create-react-app-perf-test/blob/master/performance-chart.png?raw=true)
+
+* Total time from start to load: `loadEventEnd - fetchStart`
+* Time spent constructing the DOM tree: `domComplete - domInteractive`
+* Time spent during the request: `responseEnd - requestStart`
+* Request to completion of the DOM loading: `domInteractive - responseEnd`
+* Render Time: `domComplete - domLoading`
+1545874782308 - 1545874782159 = 149
+
+Source: https://gist.github.com/daliborgogic/5951a7380ff8b57464fcd24f6f42eb36#gistcomment-2237115
+
+### Sample Output
 
 ![perf metrics](https://github.com/bjankord/create-react-app-perf-test/blob/master/perf-metrics.png?raw=true)
 
