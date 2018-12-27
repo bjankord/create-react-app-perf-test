@@ -1,5 +1,7 @@
 const puppeteer = require('puppeteer');
 const tracealyzer = require('tracealyzer');
+const chalk = require('chalk');
+const prettyjson = require('prettyjson');
 
 const TRACE_FILE = 'trace.json';
 
@@ -22,14 +24,18 @@ const TRACE_FILE = 'trace.json';
   const pageMetrics = await page.metrics();
   await browser.close();
 
-  const metrics = tracealyzer(TRACE_FILE);
+  const tracealyzerMetrics = tracealyzer(TRACE_FILE);
+
 
   // More Info: https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming
-  console.log(performance, 'performance-timing');
+  console.log((chalk.yellow.underline.bold('window.performance total and entries\n')));
+  console.log(prettyjson.render(performance, {numberColor: 'cyan'}));
 
   // More info: https://github.com/GoogleChrome/puppeteer/blob/v1.11.0/docs/api.md#pagemetrics
-  console.log(pageMetrics, 'page-metrics');
+  console.log((chalk.yellow.underline.bold('puppeteer page metrics\n')));
+  console.log(prettyjson.render(pageMetrics, {numberColor: 'cyan'}));
 
   // More info: https://www.npmjs.com/package/tracealyzer
-  console.log(metrics, 'tracealyzer-metrics');
+  console.log((chalk.yellow.underline.bold('tracealyzer metrics\n')));
+  console.log(prettyjson.render(tracealyzerMetrics, {numberColor: 'cyan'}));
 })();
