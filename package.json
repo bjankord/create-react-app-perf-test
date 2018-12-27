@@ -16,6 +16,7 @@
     "build:local": "PUBLIC_URL=http://localhost:5000 react-scripts build",
     "serve": "serve -s build",
     "test": "react-scripts test",
+    "perf-test": "node perf-test.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
