@@ -1,7 +1,23 @@
 {
-  "name": "cra-perf-test",
-  "version": "0.1.0",
-  "private": true,
+  "name": "create-react-app-perf-test",
+  "version": "1.0.0",
+  "description": "Sample create react app set up for performance testing with puppeteer.",
+  "author": "Brett Jankord",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjankord/create-react-app-perf-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bjankord/create-react-app-perf-test/issues"
+  },
+  "homepage": "https://bjankord.github.io/create-react-app-perf-test",
+  "keywords": [
+    "create-react-app",
+    "puppeteer",
+    "performance",
+    "performance-testing"
+  ],
   "dependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
