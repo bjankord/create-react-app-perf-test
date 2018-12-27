@@ -30,6 +30,11 @@ Using [create-react-app](https://github.com/facebook/create-react-app) + [puppet
 * In a seperate terminal tab, run `npm run perf-test`.
   * *This runs puppeteer on the app being served on [http://localhost:5000](http://localhost:5000) and logs performance timing metrics, page metrics from puppeteer, as well as metrics from puppeter trace file via tracealyzer.*
 
+### Sample Output
+
+<img src="(https://github.com/bjankord/create-react-app-perf-test/blob/master/perf-metrics.png?raw=true)" alt="sample output" width="50%">
+
+
 ### Performance Chart
 
 ![performance-chart](https://github.com/bjankord/create-react-app-perf-test/blob/master/performance-chart.png?raw=true)
@@ -39,13 +44,8 @@ Using [create-react-app](https://github.com/facebook/create-react-app) + [puppet
 * Time spent during the request: `responseEnd - requestStart`
 * Request to completion of the DOM loading: `domInteractive - responseEnd`
 * Render Time: `domComplete - domLoading`
-1545874782308 - 1545874782159 = 149
 
 Source: https://gist.github.com/daliborgogic/5951a7380ff8b57464fcd24f6f42eb36#gistcomment-2237115
-
-### Sample Output
-
-![perf metrics](https://github.com/bjankord/create-react-app-perf-test/blob/master/perf-metrics.png?raw=true)
 
 ## Inspiration
 
