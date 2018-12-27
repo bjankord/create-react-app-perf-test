@@ -32,7 +32,7 @@ Using [create-react-app](https://github.com/facebook/create-react-app) + [puppet
 
 ### Sample Output
 
-<img src="(https://github.com/bjankord/create-react-app-perf-test/blob/master/perf-metrics.png?raw=true)" alt="sample output" width="50%">
+<img src="https://github.com/bjankord/create-react-app-perf-test/blob/master/perf-metrics.png?raw=true" alt="sample output" width="50%">
 
 
 ### Performance Chart
